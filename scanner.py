@@ -24,13 +24,13 @@ while True :
 	# Camera Feed 
 	_, img = capture.read()
 	
-	# img = cv2.flip(img,1)
 
 	# Check each bar code in the frame
 	for scanned_code in decode(img):
 		text = ""
 		color = (0,255,0)
 		id_code = scanned_code.data.decode("utf-8")
+		print(id_code)
 		# If the code on the scanned code is in the valid or known ids 
 		# the person is authorized 
 		if id_code in known_ids:
